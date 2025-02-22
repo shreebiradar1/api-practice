@@ -17,7 +17,7 @@ public class ProductService {
 	ProductResponse response;
 	
 	public ProductResponse saveProduct(ProductRequest req) {
-		product.setId(req.getId());
+		product.setProduct_id(req.getId());
 		product.setName(req.getProductName());
 		product.setPrice(req.getPrice());
 		product.setQuantity(req.getQuantity());

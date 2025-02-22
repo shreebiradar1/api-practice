@@ -4,34 +4,38 @@ import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 @Component
 @Entity
 @Table
 public class Product {
-	
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
-	long id;
-	
+	long product_id;
+
 	@Column
 	String name;
-	
+
 	@Column
 	String quantity;
-	
+
 	@Column
 	String price;
-	
+
 	@Column
 	String category;
 
-	public long getId() {
-		return id;
+	public long getProduct_id() {
+		return product_id;
 	}
 
-	public void setId(long id) {
-		this.id = id;
+	public void setProduct_id(long product_id) {
+		this.product_id = product_id;
 	}
 
 	public String getName() {
@@ -65,7 +69,5 @@ public class Product {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	
-	
-	
+
 }
